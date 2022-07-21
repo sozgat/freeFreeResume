@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  main:
+    banner-mode: "off"
+  profiles:
+    active: dev
+  datasource:
+    username: ${MYAPP_JDBC_USER}
+    url: ${MYAPP_JDBC_URL}
+    password: ${MYAPP_JDBC_PASS}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
