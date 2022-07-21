@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static java.util.stream.Collectors.toList;
-
 @Slf4j
 @RestController
 @RequestMapping(value = "/users")
@@ -31,8 +29,8 @@ public class UserController {
     public List<UserDTO> getUsers() {
         return userService.getAll()
                 .stream()
-                .map(userMapper::UserModeltoUserDTO)
-                .collect(toList());
+                .map(userMapper::userModeltoUserDTO)
+                .toList();
     }
 
 
